@@ -1,0 +1,12 @@
+# Docker Build Log
+Step 1/5 : FROM node:16
+ ---> 7dbb4a5f7722
+Step 2/5 : WORKDIR /app
+ ---> Running in 48f9a7c0fcb6
+Step 3/5 : COPY . .
+ ---> 56fdb71cfa24
+Step 4/5 : RUN npm install
+ ---> Running in 3b6d9bbd0d68
+...
+Successfully built 54f0dfe0cbba
+Successfully tagged myapp:latest

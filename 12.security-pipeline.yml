@@ -1,0 +1,21 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'MySonarQubeServer'
+    scannerMode: 'MSBuild'
+    projectKey: 'myapp-key'
+    projectName: 'MyApp'
+
+- task: SonarQubeAnalyze@4
+  inputs:
+    projectKey: 'myapp-key'
+
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'

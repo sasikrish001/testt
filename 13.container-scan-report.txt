@@ -1,0 +1,11 @@
+# Container Scan Report
+Image: myapp:latest
+Date: 2025-01-07
+
+Vulnerabilities Found:
+- CVE-2020-12345: High - Path: /usr/lib/x86_64-linux-gnu/libxyz.so
+- CVE-2021-67890: Medium - Path: /bin/bash
+
+Recommendations:
+1. Update libxyz.so to version 1.2.3
+2. Use an updated version of bash

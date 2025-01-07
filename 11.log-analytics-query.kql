@@ -1,0 +1,6 @@
+// Query to find error logs in the last 24 hours
+AppRequests
+| where TimeGenerated > ago(24h)
+| where ResponseCode != 200
+| project TimeGenerated, URL, ResponseCode, ClientIP
+| order by TimeGenerated desc

@@ -1,0 +1,11 @@
+replicaCount: 2
+
+image:
+  repository: myacr.azurecr.io/myapp
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  name: myapp
+  type: ClusterIP
+  port: 80

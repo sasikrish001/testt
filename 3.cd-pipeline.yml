@@ -1,0 +1,21 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'specific'
+    project: '$(System.TeamProject)'
+    definition: '$(Build.DefinitionName)'
+    buildId: '$(Build.BuildId)'
+    downloadType: 'specific'
+    downloadPath: '$(Build.SourcesDirectory)'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'MyAzureSubscription'
+    appName: 'MyAppService'
+    package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
